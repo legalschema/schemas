@@ -1,0 +1,34 @@
+{% extends "page.njk" %}
+
+{% block body %}
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1">
+            UK Legal Schemas <span class="has-light">Schema Repository</span>
+          </h1>
+          <h2 class="subtitle">
+            This repository hosts all UK Legal Schemas. Schemas are captured using the
+            <a href="https://github.com/accordproject/concerto">Concerto Modeling Language (CTO)</a>; a platform and runtime neutral typed schema language. The CTO
+            <a href="https://models.accordproject.org/concerto/metamodel.html">meta-model</a> provides just-enough functionality to capture most business models and maps naturally to many executions
+            languages. Models can be used to define clauses and contracts, as well as domains models used within clauses and contracts. The CTO runtime stack is implemented in JavaScript and CTO instances serialize to JSON. CTO models
+            can also be exported to Java, Go, XML Schema, and Typescript. For more on Concerto, read the <a href="https://www.accordproject.org/projects/concerto/">Concerto project outline</a>. 
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-2">Schemas Namespaces</h2>
+            <div class="content">
+                <ul class="namespaces-list">
+                    {% for e in modelFileIndex %}
+                    <li>
+                        <a href="{{e.htmlFile}}">{{e.modelFile.getNamespace()}}{{ e.modelVersion }}</a> ({{e.modelFile.getAllDeclarations().length}} types)
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

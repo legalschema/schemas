@@ -1,0 +1,93 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace org.legalschema.commodity
+
+import org.accordproject.value.UnitOfMass from https://models.accordproject.org/value.cto
+
+enum PackageType {
+  o BAG
+  o BALE
+  o BARREL
+  o BASKET
+  o BATTERY_CORROSIVE_WET
+  o BIN
+  o BOX
+  o BUNCH
+  o BUNDLE
+  o CABINET
+  o CAN
+  o CARBOY
+  o CARRIER
+  o CARTON
+  o CASE
+  o CASK
+  o CONTAINER
+  o CRATE
+  o CYLINDER
+  o DRUM
+  o LOOSE
+  o OTHER
+  o PACKAGE
+  o PAIL
+  o PALLET
+  o PIECES
+  o PIPE_LINE
+  o RACK
+  o REEL
+  o ROLL
+  o SKID
+  o SPOOL
+  o TANK
+  o TUBE
+  o UNIT
+  o VAN_PACK
+  o WRAPPED
+}
+
+enum FreightClass {
+  o CLASS_50
+  o CLASS_55
+  o CLASS_60
+  o CLASS_65
+  o CLASS_70
+  o CLASS_775
+  o CLASS_85
+  o CLASS_925
+  o CLASS_100
+  o CLASS_110
+  o CLASS_125
+  o CLASS_150
+  o CLASS_175
+  o CLASS_200
+  o CLASS_250
+  o CLASS_300
+  o CLASS_400
+  o CLASS_500
+}
+
+enum Hazardous {
+  o YES
+  o NO
+}
+
+concept Commodity {
+  o Integer quantity
+  o UnitOfMass unitOfMass
+  o PackageType packageType
+  o String description
+  o String  nmfcCode optional // National Motor Freight Classification (NMFC) number associated with the commodity classification.
+  o FreightClass freightClass optional
+  o Hazardous hazmat optional
+}
