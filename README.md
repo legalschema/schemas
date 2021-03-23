@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.legalschemas.org/">
+  <a href="https://www.legalschema.org/">
     <img src="assets/images/logo.png" alt="UK Legal Schemas Logo" width="400" />
   </a>
 </p>  
@@ -8,7 +8,7 @@
 
 This repository hosts all UK Legal Schemas. Models are captured using the [Concerto][concerto] modeling language; a platform and runtime neutral typed schema language.
 
-The build system for this repository publishes the models to: https://schemas.legalschemas.org
+The build system for this repository publishes the models to: https://schemas.legalschema.org
 
 Environment Variables used by the build system:
 
