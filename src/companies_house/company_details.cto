@@ -1,0 +1,59 @@
+namespace uk.gov.companieshouse
+
+import org.accordproject.address.PostalAddress from https://models.accordproject.org/address.cto
+
+// Based on: CompanyDetails-v2-1.xsd,v 1.3 2009-03-24 10:03:11
+
+concept Account {
+    o DateTime accountRefDate
+    o DateTime nextDueDate
+    o Boolean overdue
+    o DateTime lastMadeUpDate
+    o String accountCategory
+    o Boolean documentAvailable
+}
+
+concept Return {
+    o DateTime nextDueDate
+    o Boolean overdue
+    o DateTime lastMadeUpDate
+    o Boolean documentAvailable
+}
+
+concept Mortgage {
+    o Integer mortgageInd
+    o Integer numMortCharges
+    o Integer numMortOutstanding
+    o Integer numMortPartSatisfied
+    o Integer numMortSatisfied
+}
+
+concept LimitedPartnership {
+    o Integer numGenPartners
+    o Integer numLimPartners
+}
+
+concept CompanyDetails {
+    o String companyName
+    o String companyNumber
+    o Boolean hasInconsistencies
+    o PostalAddress regAddress
+    o String companyCategory
+    o String companyStatus
+    o String countryOfOrigin
+    o DateTime registrationDate optional
+    o DateTime dissolutionDate optional
+    o DateTime incorporationDate optional
+    o DateTime closureDate optional
+    o String[] previousNames
+    o Account[] accounts
+    o Return[] returns
+    o Mortgage[] mortgages
+    o String[] SICCodes
+    o DateTime lastFullMemDate optional
+    o DateTime lastBulkShareDate optional
+    o DateTime weededDate optional
+    o Boolean hasAppointments
+    o Boolean inLiquidation
+    o LimitedPartnership LimitedPartnership optional
+}
